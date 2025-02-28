@@ -11,7 +11,7 @@
 
   <meta property="og:image" content="assets/profile_pic.png" />
 
-  <title>Homework 3</title>
+  <title>nyl_creates</title>
   <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
 </head>
 
@@ -35,32 +35,72 @@
         progress of my creative work and hope it will spark creative inspo in others.</p>
     </div>
   </section>
-  <h1>Creative Interests</h1>
-  <div class="categories">
-    <section class="projects">
-      <h2>Crochet</h2>
-      <p>Details</p>
-      <div class="projectImgs">
+
+  <section class="interests">
+    <h1>Creative Interests</h1>
+    <div class="categories">
+
+      <div class="crochet projects">
+        <h2>Crochet</h2>
+
+        <img class="img2" src="assets/crochet.jpg" alt="Picture of hat" />
+        <div class="projectImgs">
+
+        </div>
+        <p>From amigurumi to clothes, I have an interest in all things crochet. Currently in the process of creating my
+          own patterns and working through my large pile of WIPS.</p>
+        <a href="projects.html">
+          <button class="button">Take me Crochet Away!</button>
+        </a>
       </div>
-      <a href="projects.html">
-        <button class="button">Take me Crochet Away!</button>
-      </a>
-    </section>
-    <section class="projects">
-      <h2>Design</h2>
-      <p>Details</p>
-      <a href="projects.html">
-        <button class="button">3D/UI/More ...</button>
-      </a>
-    </section>
-    <section class="projects">
-      <h2>Journaling</h2>
-      <p>Details</p>
-      <a href="projects.html">
-        <button class="button">BuJo Please</button>
-      </a>
-    </section>
-  </div>
+      <div class="design projects">
+        <h2>Design</h2>
+        <img class="img2" src="assets/design.png" alt="Picture of hat" />
+        <p>Taking concepts I learn in class and designing away! Design includes projects in Figma, 3D, and frontend
+          software development.</p>
+        <a href="projects.html">
+          <button class="button">3D/UI/More ...</button>
+        </a>
+      </div>
+      <div class="journal projects">
+        <h2>Journaling</h2>
+        <img class="img2" src="assets/bujo.jpeg" alt="Picture of hat" />
+        <p>Monthly/Weekly spreads and fun themes that reflect my current interests and passions. Also sharing what
+          materials I use and thoughts on journaling in general.</p>
+        <a href="projects.html">
+          <button class="button">BuJo Please</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      // Loop over the entries
+      entries.forEach(entry => {
+        // If the element is visible
+        if (entry.isIntersecting) {
+          // Add the animation class
+          entry.target.classList.add('animate');
+          entry.target.classList.add('glow');
+          const randomInt = Math.floor(Math.random() * 3);
+          if (randomInt === 0) {
+            entry.target.classList.add('delay-0');
+          } else if (randomInt === 1) {
+            entry.target.classList.add('delay-2');
+          } else if (randomInt === 2) {
+            entry.target.classList.add('delay-3');
+          }
+        }
+      });
+    });
+    const targetElement = document.querySelector('.crochet');
+    console.log(targetElement);
+    observer.observe(targetElement);
+    observer.observe(document.querySelector('.design'));
+    observer.observe(document.querySelector('.journal'));
+  </script>
+
   <footer>
     <h2>Contact Information</h2>
     <p>Instagram: @nyl_creates</p>

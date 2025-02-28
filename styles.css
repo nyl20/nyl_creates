@@ -56,17 +56,23 @@ h3 {
   font-family: monospace;
 }
 
-p {
+p,
+button {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .profile {
   display: flex;
   flex-direction: row;
-  padding: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 5%;
   justify-content: center;
-  border-top: #006D77 solid 5px;
-  /* border-bottom: #006D77 solid 5px; */
+  /* border-top: #006D77 solid 5px; */
+  border-bottom: #006D77 solid 5px;
+  /* background-color: #ffDDD2; */
 }
 
 #profile-pic {
@@ -83,10 +89,21 @@ p {
   padding-left: 0%;
 }
 
+.interests {
+  /* margin-left: 4%;
+  margin-right: 4%; */
+  text-align: center;
+}
+
+.interests h1 {
+  font-size: 25px;
+}
+
+
 .categories {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
+  /* justify-content: space-between; */
 }
 
 .projects {
@@ -125,7 +142,6 @@ p {
   border-radius: 15px;
   border: #E29578 solid 3px;
   font-size: 15px;
-  font-family: serif;
 }
 
 .button:hover {
@@ -179,6 +195,48 @@ footer {
   margin-top: 3%;
 }
 
+/* Fade In Animation */
+
+.animate {
+  animation-duration: 0.75s;
+  animation-delay: 0.5s;
+  animation-name: animate-fade;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+/* Glow In */
+.animate.glow {
+  animation-name: animate-glow;
+  animation-timing-function: ease;
+}
+
+@keyframes animate-glow {
+  0% {
+    opacity: 0;
+    filter: brightness(3) saturate(3);
+    transform: scale(0.8, 0.8);
+  }
+
+  100% {
+    opacity: 1;
+    filter: brightness(1) saturate(1);
+    transform: scale(1, 1);
+  }
+}
+
+.delay-1 {
+  animation-delay: 0.4s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+.delay-3 {
+  animation-delay: 0.8s;
+}
+
 @media screen and (max-width: 1100px) {
   .example {
     flex-direction: column;
@@ -220,17 +278,21 @@ footer {
     padding: 5%;
   }
 
-  .projectImgs {
-    grid-template-columns: 1fr;
+  .categories {
+    flex-direction: column;
+    align-items: center;
   }
 
   .projects {
     justify-content: center;
-    text-align: center;
+    text-align: left;
+    width: 80%;
+    padding: 5%;
   }
 
-  .img {
-    height: 220px;
+  .img2 {
+    height: 240px;
+    max-width: 80%;
   }
 
   .exampleImgs {
