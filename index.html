@@ -9,14 +9,13 @@
 
   <meta property="og:description" content="A page dedicated to Nicole's design projects and CS5356 HW3" />
 
-  <meta property="og:image" content="assets/intro.png" />
+  <meta property="og:image" content="assets/profile_pic.png" />
 
   <title>Homework 3</title>
   <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
 </head>
 
 <body>
-  <script data-goatcounter="https://nyl6.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <header>
     <div class="welcome">
       <div class="left">
@@ -25,72 +24,46 @@
     </div>
   </header>
   <section class="profile">
-    <img id="hat" src="assets/hat_profile.jpeg" alt="Picture of hat" />
+    <img id="profile-pic" src="assets/profile_pic.png" alt="Picture of hat" />
     <div class="about">
-      <h2>About</h2>
-      <p>Nicole is an avid creator and enjoys working in multiple mediums and learning new skills. She is a current
-        Master's student at Cornell Tech studying applied information science with a concentration in health tech. As a
-        studemt, she has taken design courses like HCI and Design and has learned the importance of user experience, as
-        well as the aesthetics of design. Learn more about her creative skills and projects here.</p>
-      <p id="quote-text">Design can help to improve our lives in the present. Design thinking can help us chart a path
-        into the future. - Tim Brown</p>
-      <button class="button" id="quote-button">Change design quote</button>
-
-      <script>
-        const text = document.querySelector('#quote-text');
-        const button = document.querySelector('#quote-button');
-        const url = 'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
-        fetch(url)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then(data => {
-            console.log('Data received:', data[2]);
-            button.addEventListener('click', function () {
-              const randomIndex = Math.floor(Math.random() * data.length);
-              const tempDiv = document.createElement("div");
-              tempDiv.innerHTML = data[randomIndex].content.rendered;
-              const quote = tempDiv.innerText || tempDiv.textContent;
-              const author = data[randomIndex].title.rendered;
-              text.textContent = `${quote} - ${author}`;
-            });
-          })
-          .catch(error => {
-            console.error('There was a problem fetching the data:', error);
-          });
-
-
-      </script>
-
+      <h1>About</h1>
+      <p>My name is Nicole and I am an avid creator! I enjoy working in multiple mediums and learning new skills
+        and I will share my creative interests here. As a current student, I am balancing course work with my side
+        projects and use creative outlets to relax and destress. My main two creative outlets are crocheting and bullet
+        journaling, though I have been getting into 3D design and my area of study includes frontend design. I started
+        bullet journaling in high school and I began crocheting in my sophomore year of college. I hope to share the
+        progress of my creative work and hope it will spark creative inspo in others.</p>
     </div>
   </section>
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="projectImgs">
-      <div class="project">
-        <img class="img2" src="assets/findTrail.png" alt="Image of Figma Project" />
-        <p>Figma</p>
+  <h1>Creative Interests</h1>
+  <div class="categories">
+    <section class="projects">
+      <h2>Crochet</h2>
+      <p>Details</p>
+      <div class="projectImgs">
       </div>
-      <div class="project">
-        <img class="img2" src="assets/gogo_img.png" alt="Image of 3D Project" />
-        <p>3D</p>
-      </div>
-      <div class="project">
-        <img class="img2" src="assets/artTech.jpg" alt="Image of Crochet Project" />
-        <p>Crochet</p>
-      </div>
-    </div>
-    <a href="projects.html">
-      <button class="button">Learn More About Projects</button>
-    </a>
-  </section>
+      <a href="projects.html">
+        <button class="button">Take me Crochet Away!</button>
+      </a>
+    </section>
+    <section class="projects">
+      <h2>Design</h2>
+      <p>Details</p>
+      <a href="projects.html">
+        <button class="button">3D/UI/More ...</button>
+      </a>
+    </section>
+    <section class="projects">
+      <h2>Journaling</h2>
+      <p>Details</p>
+      <a href="projects.html">
+        <button class="button">BuJo Please</button>
+      </a>
+    </section>
+  </div>
   <footer>
     <h2>Contact Information</h2>
-    <p>School Email: nyl6@cornell.edu</p>
-    <p>Personal Email: nicole.yliao@gmail.com</p>
+    <p>Instagram: @nyl_creates</p>
 
   </footer>
 

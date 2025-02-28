@@ -1,7 +1,7 @@
 .welcome {
   display: flex;
   padding-top: 10%;
-  padding-bottom: 10%;
+  padding-bottom: 8%;
   background-color: #EDF6F9;
 }
 
@@ -56,26 +56,45 @@ h3 {
   font-family: monospace;
 }
 
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
 .profile {
   display: flex;
   flex-direction: row;
-  padding: 3%;
+  padding: 2%;
+  justify-content: center;
+  border-top: #006D77 solid 5px;
+  /* border-bottom: #006D77 solid 5px; */
 }
 
-#hat {
-  width: 30%;
-  border-radius: 10px;
+#profile-pic {
+  width: 40%;
+  /* border-radius: 10px; */
+  /* background-color: #E29578; */
 }
 
 .about {
   padding: 10%;
+  width: 80%;
+  /* background-color: #E29578; */
+  /* align-items: flex-start; */
+  padding-left: 0%;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
 }
 
 .projects {
-  text-align: center;
+  text-align: left;
   background-color: #ffDDD2;
   margin: 3%;
   padding: 2%;
+  width: 30%;
   border-radius: 30px;
 }
 
@@ -101,7 +120,7 @@ h3 {
 
 .button {
   background-color: #E29578;
-  padding: 1%;
+  padding: 3%;
   color: #FFFFFF;
   border-radius: 15px;
   border: #E29578 solid 3px;
