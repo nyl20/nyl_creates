@@ -58,7 +58,17 @@ h3 {
 
 p,
 button {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li a {
+  text-decoration: none;
+  color: #006D77;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #E29578;
 }
 
 .profile {
@@ -71,7 +81,8 @@ button {
   margin-bottom: 5%;
   justify-content: center;
   /* border-top: #006D77 solid 5px; */
-  border-bottom: #006D77 solid 5px;
+  border-bottom: #006D77 solid 3px;
+  /* box-shadow: 0px 4px 5px #006D77; */
   /* background-color: #ffDDD2; */
 }
 
@@ -113,6 +124,7 @@ button {
   padding: 2%;
   width: 30%;
   border-radius: 30px;
+  box-shadow: 3px 7px 5px #EDF6F9;
 }
 
 .projectImgs {
@@ -237,6 +249,47 @@ footer {
   animation-delay: 0.8s;
 }
 
+/* CROCHET CSS */
+
+.crochetHeader {
+  background-color: #EDF6F9;
+  padding-top: 0.5%;
+  padding-bottom: 3%;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: end;
+
+}
+
+.nav ul li {
+  display: inline;
+  margin: 0;
+  padding: 1%;
+  padding-left: 2%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.crochetNav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.crochetNav ul li {
+  display: inline;
+  margin: 0;
+  padding: 2%;
+  padding-left: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 @media screen and (max-width: 1100px) {
   .example {
     flex-direction: column;
@@ -305,6 +358,7 @@ footer {
   .typewriter {
     animation: none !important;
     white-space: normal;
+    border-right: none;
   }
 
 }

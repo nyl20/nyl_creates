@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="Nicole Liao's Website" />
+
+  <meta property="og:description" content="A page dedicated to Nicole's design projects and CS5356 HW3" />
+
+  <meta property="og:image" content="assets/intro.png" />
+
+  <title>nyl_creates</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
+</head>
+
+<body>
+  <header class="crochetHeader">
+
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="crochet.html">Crochet</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="journal.html">Journaling</a></li>
+      </ul>
+    </nav>
+    <h1>Crochet</h1>
+    <div class="crochetNav">
+      <ul>
+        <li><a href="crochet.html">Projects</a></li>
+        <li><a href="crochet.html">In Progress</a></li>
+        <li><a href="crochet.html">Blog</a></li>
+      </ul>
+    </div>
+
+  </header>
+  <section>
+    <h2>Amigurumi</h2>
+  </section>
+  <section>
+    <h2>Wearables</h2>
+  </section>
+  <section>
+    <h2>Tapestries</h2>
+  </section>
+  <section>
+    <h2>Coasters</h2>
+  </section>
+
+
+
+  <section class="projectDetails">
+    <div class="example">
+      <div class="exampleDetails">
+        <h3>User Interfaces in Figma</h3>
+        <p>Figma is a well-developed tool for creating designs in 2D that I have gained experience in through
+          classes like HCI and Design. I have designed interfaces for multiple screen sizes including watches, mobile
+          screens, and desktops. The images to the right are part of an interface I designed for an app that helps users
+          find trails near them and track their activity. Other projects in Figma include initial designs for an app
+          called SquashScore and a prototype for a social media based app. </p>
+      </div>
+      <div class="exampleImgs">
+        <figure>
+          <img class="img2" src="assets/watch.png" alt="Picture of Mobile Figma Project" />
+        </figure>
+        <figure>
+          <img class="img2" src="assets/mobile.png" alt="Picture of Watch Figma Project" />
+        </figure>
+      </div>
+
+
+    </div>
+
+    <div class="example">
+      <div class="exampleDetails">
+        <h3>3D Model of Gogo Technique</h3>
+        <p>Virtual reality is getting increasingly popular and takes on a whole new dimension to design. Taking a course
+          on 3D User Interfaces, I have been learning the fundamentals of designing for 3D and creating scenes in 3D.
+          The video example here is
+          my model of the gogo technique for selection and manipulation in the paper by Poupyrev et al.</p>
+      </div>
+      <div class="exampleImgs">
+        <video class="img2" controls>
+          <source src="assets/gogo_video.mp4" type="video/mp4" alt="Video of gogo">
+        </video>
+      </div>
+
+    </div>
+
+
+    <button id="scrollToTop" class="scrollButton, button">&#8593 Scroll to Top</button>
+
+    <script>
+      const scrollToTopButton = document.getElementById('scrollToTop');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+          scrollToTopButton.style.display = "block";
+        } else {
+          scrollToTopButton.style.display = "none";
+        }
+      });
+
+      scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+
+  </section>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="Nicole Liao's Website" />
+
+  <meta property="og:description" content="A page dedicated to Nicole's design projects and CS5356 HW3" />
+
+  <meta property="og:image" content="assets/intro.png" />
+
+  <title>Homework 3</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
+</head>
+
+<body>
+  <header class="projectHeader">
+    <a href="index.html">
+      <button class="button">&#8592 Back to Home</button>
+    </a>
+    <h1>Journaling</h1>
+    <script>
+      const url = 'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Data received:', data[2]);
+          const randomIndex = Math.floor(Math.random() * data.length);
+          const tempDiv = document.createElement("div");
+          tempDiv.innerHTML = data[randomIndex].content.rendered;
+          const quote = tempDiv.innerText || tempDiv.textContent;
+          const author = data[randomIndex].title.rendered;
+          console.log(`${quote} - ${author}`);
+          document.getElementById('quote').innerText = `${quote} - ${author}`;
+          document.getElementById('author').innerText = author;
+        })
+        .catch(error => {
+          console.error('There was a problem fetching the data:', error);
+        });
+    </script>
+    <blockquote id='quote'></blockquote>
+  </header>
+
+
+
+  <section class="projectDetails">
+    <div class="example">
+      <div class="exampleDetails">
+        <h3>User Interfaces in Figma</h3>
+        <p>Figma is a well-developed tool for creating designs in 2D that I have gained experience in through
+          classes like HCI and Design. I have designed interfaces for multiple screen sizes including watches, mobile
+          screens, and desktops. The images to the right are part of an interface I designed for an app that helps users
+          find trails near them and track their activity. Other projects in Figma include initial designs for an app
+          called SquashScore and a prototype for a social media based app. </p>
+      </div>
+      <div class="exampleImgs">
+        <figure>
+          <img class="img2" src="assets/watch.png" alt="Picture of Mobile Figma Project" />
+        </figure>
+        <figure>
+          <img class="img2" src="assets/mobile.png" alt="Picture of Watch Figma Project" />
+        </figure>
+      </div>
+
+
+    </div>
+
+    <div class="example">
+      <div class="exampleDetails">
+        <h3>3D Model of Gogo Technique</h3>
+        <p>Virtual reality is getting increasingly popular and takes on a whole new dimension to design. Taking a course
+          on 3D User Interfaces, I have been learning the fundamentals of designing for 3D and creating scenes in 3D.
+          The video example here is
+          my model of the gogo technique for selection and manipulation in the paper by Poupyrev et al.</p>
+      </div>
+      <div class="exampleImgs">
+        <video class="img2" controls>
+          <source src="assets/gogo_video.mp4" type="video/mp4" alt="Video of gogo">
+        </video>
+      </div>
+
+    </div>
+
+    <div class="example">
+      <div class="exampleDetails">
+        <h3>Crochet Tech</h3>
+        <p>Perhaps my most passionate projects are those done through crochet. Having learned crochet in college, I have
+          quickly grown my skills and have recently combined crochet and science. At the Cornell Tech Art Collective, I
+          crocheted electrical wire with yarn and was able to connect an LED light to the crochet flower (left image). I
+          hope to explore more applications of tech in crochet and make interesting designs.
+          Additionally, I have crocheted an art piece demonstrating the symbiotic relationship of plants and fungi
+          (right image) that was displayed in the library at Cornell University.</p>
+      </div>
+      <div class="exampleImgs">
+        <figure>
+          <img class="img2" src="assets/artTech.jpg" alt="Image of light up crochet" />
+        </figure>
+        <figure>
+          <img class="img2" src="assets/mushrooms.jpg" alt="Image of mushromm crochet" />
+        </figure>
+
+      </div>
+
+
+    </div>
+
+    <button id="scrollToTop" class="scrollButton, button">&#8593 Scroll to Top</button>
+
+    <script>
+      const scrollToTopButton = document.getElementById('scrollToTop');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+          scrollToTopButton.style.display = "block";
+        } else {
+          scrollToTopButton.style.display = "none";
+        }
+      });
+
+      scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+
+  </section>
+
+</body>
+
+</html>
