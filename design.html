@@ -15,11 +15,17 @@
 </head>
 
 <body>
-  <header class="projectHeader">
-    <a href="index.html">
-      <button class="button">&#8592 Back to Home</button>
-    </a>
+  <header class="crochetHeader">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="crochet.html">Crochet</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="journal.html">Journaling</a></li>
+      </ul>
+    </nav>
     <h1>Design Projects</h1>
+
     <script>
       const url = 'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
       fetch(url)
